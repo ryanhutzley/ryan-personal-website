@@ -3,18 +3,35 @@ import styled from 'styled-components'
 
 function NavBar() {
 
-    const StyledDiv = styled.div`
+    const StyledNavBar = styled.div`
         position: relative;
         height: 10%;
         top: 0;
         margin: 20px 5px 5px 20px;
         display: flex;
         justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+    `
+
+    const StyledIcon = styled(Link)`
+        position: relative;
+        text-decoration: none;
+        font-size: 3.5vw;
+        color: #000;
+        font-weight: bold;
+        padding: 10px;
+        border: 15px solid black;
+        border-radius: 10px;
+        margin-right: 10px;
+        &:hover {
+            cursor: pointer;
+        }
     `
 
     const StyledLink = styled(Link)`
         position: relative;
-        font-size: 36px;
+        font-size: 3.5vw;
         color: #000;
         text-decoration: none;
         &:hover {
@@ -25,7 +42,7 @@ function NavBar() {
             position: absolute;
             display: block;
             width: 100%;
-            height: 2px;
+            height: 5px;
             bottom: 0;
             left: 0;
             background-color: #000;
@@ -39,11 +56,12 @@ function NavBar() {
     `
 
     return (
-        <StyledDiv>
+        <StyledNavBar>
+            <StyledIcon to="/">RH</StyledIcon>
             <StyledLink to="/">Home</StyledLink>
             <StyledLink to="/About">About</StyledLink>
             <StyledLink to="/Projects">Projects</StyledLink>
-        </StyledDiv>
+        </StyledNavBar>
     )
 }
 
