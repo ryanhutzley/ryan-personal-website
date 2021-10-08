@@ -1,16 +1,24 @@
-import NavBar from './Components/NavBar'
 import Home from './Components/Home'
 import About from './Components/About'
 import Projects from './Components/Projects'
-import Footer from './Components/Footer'
 import { Switch, Route } from 'react-router-dom'
+import GlobalStyle from './globalStyles'
 
 function App() {
   return (
     <div>
-      <NavBar />
-      <Home />
-      <Footer />
+      <GlobalStyle />
+      <Switch>
+        <Route exact path="/">
+            <Home />
+        </Route>
+        <Route exact path="/About">
+            <About />
+        </Route>
+        <Route exact path="/Projects">
+            <Projects />
+        </Route>
+      </Switch>
     </div>
   );
 }
