@@ -5,27 +5,26 @@ import styled from 'styled-components'
 const StyledNavBar = styled.div`
     position: relative;
     height: 10%;
-    width: 100vw;
     top: 0;
-    margin-top: ${props => props.windowWidth ? '10px' : '20px'};
-    margin-left: ${props => props.windowWidth ? '10px' : '20px'};
-    margin-bottom: 60px;
+    margin-top: ${props => props.windowwidth ? '10px' : '20px'};
+    margin-left: ${props => props.windowwidth ? '10px' : '20px'};
+    margin-bottom: 40px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: ${props => props.windowWidth ? '10px' : '50px'};
+    gap: ${props => props.windowwidth ? '10px' : '50px'};
 `
 
 const StyledIcon = styled(Link)`
     position: relative;
     text-decoration: none;
-    font-size: ${props => props.windowWidth ? '20px' : '36px'};
+    font-size: ${props => props.windowwidth ? '20px' : '36px'};
     color: #000;
     font-weight: bold;
-    padding: ${props => props.windowWidth ? '5px' : '10px'};
-    border: ${props => props.windowWidth ? '7.5px solid black' : '10px solid black'};
+    padding: ${props => props.windowwidth ? '5px' : '10px'};
+    border: ${props => props.windowwidth ? '7.5px solid black' : '10px solid black'};
     border-radius: 10px;
-    margin-right: ${props => props.windowWidth ? '0px' : '10px'};
+    margin-right: ${props => props.windowwidth ? '0px' : '10px'};
     &:hover {
         cursor: pointer;
     }
@@ -33,7 +32,7 @@ const StyledIcon = styled(Link)`
 
 const StyledLink = styled(Link)`
     position: relative;
-    font-size: ${props => props.windowWidth ? '20px' : '36px'};
+    font-size: ${props => props.windowwidth ? '20px' : '36px'};
     color: #000;
     text-decoration: none;
     &:hover {
@@ -44,7 +43,7 @@ const StyledLink = styled(Link)`
         position: absolute;
         display: block;
         width: 100%;
-        height: ${props => props.windowWidth ? '2px' : '5px'};
+        height: ${props => props.windowwidth ? '2px' : '5px'};
         bottom: 0;
         left: 0;
         background-color: #000;
@@ -60,11 +59,11 @@ const StyledLink = styled(Link)`
 function NavBar({ windowWidth }) {
 
     return (
-        <StyledNavBar windowWidth={windowWidth}>
-            <StyledIcon windowWidth={windowWidth} to="/">RH</StyledIcon>
-            <StyledLink windowWidth={windowWidth} to="/">Home</StyledLink>
-            <StyledLink windowWidth={windowWidth} to="/About">About</StyledLink>
-            <StyledLink windowWidth={windowWidth} to="/Projects">Projects</StyledLink>
+        <StyledNavBar windowwidth={windowWidth ? 'true' : ''}>
+            <StyledIcon windowwidth={windowWidth ? 'true' : ''} to="/">RH</StyledIcon>
+            <StyledLink windowwidth={windowWidth ? 'true' : ''} to="/">Home</StyledLink>
+            <StyledLink windowwidth={windowWidth ? 'true' : ''} to="/About">About</StyledLink>
+            <StyledLink windowwidth={windowWidth ? 'true' : ''} to="/Projects">Projects</StyledLink>
         </StyledNavBar>
     )
 }

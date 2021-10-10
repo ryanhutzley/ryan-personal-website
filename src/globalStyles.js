@@ -1,10 +1,15 @@
 import { createGlobalStyle } from 'styled-components/macro'
 
 export default createGlobalStyle`
+    html, body {
+        min-height: 100vh;
+        min-width: 100vw;
+        margin: 0;
+    }    
+
     body {
-        height: 100vh;
-        width: 100vw;
         font-family: Mulish, sans-serif;
-        background-color: #f59b00
+        margin: 0;
+        background-color: #f59b00;
     }
 `

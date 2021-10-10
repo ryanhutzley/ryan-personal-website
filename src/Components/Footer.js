@@ -2,12 +2,16 @@
 import styled from 'styled-components'
 
 const Border = styled.div`
-    position: relative;
-    margin: auto;
-    height: 3px;
-    width: 90vw;
-    border-top: 3px solid black;
+    height: 8%;
+    border: 5px solid yellow;
 `
+
+// position: relative;
+//     bottom: 10;
+//     justify-content: center;
+//     min-height: 40px;
+//     width: 90vw;
+//     border-bottom: 3px solid black;
 
 function Footer({ windowWidth }) {
     return (
