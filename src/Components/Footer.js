@@ -1,21 +1,46 @@
-// import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { SingleVector } from './Home'
 
-const Border = styled.div`
-    height: 8%;
-    border: 5px solid yellow;
+const Bottom = styled.div`
+    border-top: 5px solid black;
+    height: 80px;
+    width: 95vw;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
 `
 
-// position: relative;
-//     bottom: 10;
-//     justify-content: center;
-//     min-height: 40px;
-//     width: 90vw;
-//     border-bottom: 3px solid black;
+const VectorContainer = styled.div`
+    width: 75vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+`
 
-function Footer({ windowWidth }) {
+// margin-top: auto;
+
+function Footer({ windowWidth, gmail, medium, linkedin, twitter, github }) {
     return (
-        <Border></Border>
+        <Bottom>
+            <VectorContainer>
+                <SingleVector href='mailto: ryanhutzley@gmail.com'>
+                    <img src={gmail} alt='gmail' width='45px' />
+                </SingleVector>
+                <SingleVector href='https://ryanhutzley.medium.com/'>
+                    <img src={medium} alt='medium' width='45px' />
+                </SingleVector>
+                <SingleVector href='https://www.linkedin.com/in/ryan-hutzley-0246a8169/'>
+                    <img src={linkedin} alt='linkedin' width='45px'/>
+                </SingleVector>
+                <SingleVector href='https://twitter.com/ryan_hutzley'>
+                    <img src={twitter} alt='twitter' width='45px'/>
+                </SingleVector>
+                <SingleVector href='https://github.com/ryanhutzley'>
+                    <img src={github} alt='github' width='45px'/>
+                </SingleVector>
+            </VectorContainer>
+        </Bottom>
     )
 }
 
