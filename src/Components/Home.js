@@ -74,7 +74,7 @@ const StyledButton = styled.button`
 const Vectors = styled.div`
     display: inline-flex;
     justify-content: center;
-    gap: 80px;
+    gap: ${props => props.windowwidth ? '20px' : '80px'};
 `
 
 // justify-content: space-evenly;
@@ -100,7 +100,7 @@ function Home({ windowWidth, gmail, medium, linkedin, twitter, github }) {
                     <Clickables>
                         <StyledButton onClick={() => window.open(resume)}>Resume</StyledButton>
                         <br></br>
-                        <Vectors>
+                        <Vectors windowwidth={windowWidth ? 'true' : ''}>
                             <SingleVector href='mailto: ryanhutzley@gmail.com'>
                                 <img src={gmail} alt='gmail'/>
                             </SingleVector>
