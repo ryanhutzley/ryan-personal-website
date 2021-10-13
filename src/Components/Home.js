@@ -5,21 +5,15 @@ import resume from '../images/Ryan Hutzley Resume.pdf'
 const HomeWrapper = styled.div`
     margin: auto 0;
     margin-top: ${props => props.windowwidth ? '40px' : ''};
-    margin-bottom: ${props => props.windowwidth ? '40px' : ''};
-`
-
-const Quote = styled.div`
-    width: 90vw;
-    height: 50px;
-    margin: auto;
-    text-align: center;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap: ${props => props.windowwidth ? '' : '30px'};
 `
 
-// text-align: center;
-//     font-size: 28px;
+const Quote = styled.p`
+    text-align: center;
+    font-size: 28px;
+`
 
 const ContentWrapper = styled.div`
     position: relative;
@@ -28,7 +22,10 @@ const ContentWrapper = styled.div`
     align-items: center;
     gap: ${props => props.windowwidth ? '20px' : '100px'};
     flex-wrap: wrap;
+    
 `
+
+// margin-bottom: 40px;
 
 // margin-bottom: ${props => props.windowwidth ? '50px' : '100px'};
 
@@ -76,9 +73,11 @@ const StyledButton = styled.button`
 
 const Vectors = styled.div`
     display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 80px;
 `
+
+// justify-content: space-evenly;
 
 export const SingleVector = styled.a`
     transition: all .2s ease-in-out;
@@ -105,15 +104,15 @@ function Home({ windowWidth, gmail, medium, linkedin, twitter, github }) {
                             <SingleVector href='mailto: ryanhutzley@gmail.com'>
                                 <img src={gmail} alt='gmail'/>
                             </SingleVector>
-                            <SingleVector href='https://ryanhutzley.medium.com/'>
+                            {/* <SingleVector href='https://ryanhutzley.medium.com/'>
                                 <img src={medium} alt='medium'/>
-                            </SingleVector>
+                            </SingleVector> */}
                             <SingleVector href='https://www.linkedin.com/in/ryan-hutzley-0246a8169/'>
                                 <img src={linkedin} alt='linkedin'/>
                             </SingleVector>
-                            <SingleVector href='https://twitter.com/ryan_hutzley'>
+                            {/* <SingleVector href='https://twitter.com/ryan_hutzley'>
                                 <img src={twitter} alt='twitter'/>
-                            </SingleVector>
+                            </SingleVector> */}
                             <SingleVector href='https://github.com/ryanhutzley'>
                                 <img src={github} alt='github'/>
                             </SingleVector>
@@ -121,7 +120,7 @@ function Home({ windowWidth, gmail, medium, linkedin, twitter, github }) {
                     </Clickables>
                 </Bio>
             </ContentWrapper>
-            <Quote><span className='italics'>"To give anything less than your best is to sacrifice the gift."</span> - Steve Prefontaine</Quote>
+            <Quote windowwidth={windowWidth ? 'true' : ''}><span className='italics'>"To give anything less than your best is to sacrifice the gift."</span> - Steve Prefontaine</Quote>
         </HomeWrapper>
     )
 }
