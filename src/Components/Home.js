@@ -7,17 +7,20 @@ const HomeWrapper = styled.div`
     margin-top: ${props => props.windowwidth ? '40px' : ''};
     display: flex;
     flex-direction: column;
-    gap: ${props => props.windowwidth ? '' : '30px'};
+    gap: ${props => props.windowwidth ? '20px' : '50px'};
+    justify-content: center;
+    align-items: center;
 `
 
-const Quote = styled.p`
+const Quote = styled.div`
     text-align: center;
     font-size: 28px;
+    margin-bottom: ${props => props.windowwidth ? '30px' : ''};
 `
 
 const ContentWrapper = styled.div`
     position: relative;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     gap: ${props => props.windowwidth ? '20px' : '100px'};
@@ -34,8 +37,8 @@ const StyledImage = styled.img`
     border-radius: 30px;
     box-shadow:  20px 20px 60px #d08400,
              -20px -20px 60px #ffb200;
-    width: ${props => props.windowwidth ? '250px' : ''};
-    height: ${props => props.windowwidth ? '250px' : '400px'};
+    width: ${props => props.windowwidth ? '220px' : ''};
+    height: ${props => props.windowwidth ? '220px' : '400px'};
 `
 
 const Bio = styled.div`
