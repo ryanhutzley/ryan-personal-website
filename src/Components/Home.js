@@ -1,21 +1,24 @@
 import styled from 'styled-components'
 import profile_photo from '../images/profile_photo.jpeg'
 import resume from '../images/Ryan Hutzley Resume.pdf'
+import js from '../images/icons8-javascript-100.png'
+import css from '../images/icons8-css3-100.png'
+import html from '../images/icons8-html-5-100.png'
+import react from '../images/icons8-react-100.png'
+import ruby from '../images/icons8-ruby-programming-language-100.png'
+import ror from '../images/icons8-ruby-on-rails-100.png'
+import postgres from '../images/icons8-postgresql-100.png'
+import git from '../images/icons8-git-100.png'
+import vscode from '../images/icons8-visual-studio-logo-100.png' 
 
 const HomeWrapper = styled.div`
-    margin: auto 0;
-    margin-top: ${props => props.windowwidth ? '40px' : ''};
+    margin-top: ${props => props.windowwidth ? '40px' : '30px'};
+    margin-bottom: 80px;
     display: flex;
     flex-direction: column;
-    gap: ${props => props.windowwidth ? '20px' : '50px'};
+    gap: ${props => props.windowwidth ? '20px' : '80px'};
     justify-content: center;
     align-items: center;
-`
-
-const Quote = styled.div`
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: ${props => props.windowwidth ? '30px' : ''};
 `
 
 const ContentWrapper = styled.div`
@@ -80,6 +83,12 @@ const Vectors = styled.div`
     gap: ${props => props.windowwidth ? '20px' : '80px'};
 `
 
+const Quote = styled.div`
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: ${props => props.windowwidth ? '30px' : ''};
+`
+
 // justify-content: space-evenly;
 
 export const SingleVector = styled.a`
@@ -88,6 +97,14 @@ export const SingleVector = styled.a`
         transform: scale(1.2);
     }
 `
+
+const LanguagesContainer = styled.div`
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+`
+
 
 function Home({ windowWidth, gmail, medium, linkedin, twitter, github }) {
     return (
@@ -124,6 +141,17 @@ function Home({ windowWidth, gmail, medium, linkedin, twitter, github }) {
                 </Bio>
             </ContentWrapper>
             <Quote windowwidth={windowWidth ? 'true' : ''}><span className='italics'>"To give anything less than your best is to sacrifice the gift."</span> - Steve Prefontaine</Quote>
+            <LanguagesContainer>
+                <img src={js} alt='javascript' />
+                <img src={css} alt='css' />
+                <img src={html} alt='html' />
+                <img src={react} alt='react' />
+                <img src={ruby} alt='ruby' />
+                <img src={ror} alt='ruby on rails' />
+                <img src={postgres} alt='postgres' />
+                <img src={git} alt='git' />
+                <img src={vscode} alt='vscode' />
+            </LanguagesContainer>
         </HomeWrapper>
     )
 }
