@@ -5,7 +5,7 @@ export default createGlobalStyle`
         min-height: 100vh;
         min-width: 100vw;
         margin: 0;
-    }    
+    }  
 
     body {
         font-family: Mulish, sans-serif;
@@ -13,3 +13,7 @@ export default createGlobalStyle`
         background-color: #f59b00;
     }
 `
+
+// &.modal-active {
+//     overflow: hidden;
+//   } 

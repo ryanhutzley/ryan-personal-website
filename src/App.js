@@ -2,6 +2,7 @@ import NavBar from './Components/NavBar'
 import Home from './Components/Home'
 import About from './Components/About'
 import Projects from './Components/Projects'
+import Modal from './Components/Modal'
 import Footer from './Components/Footer'
 import { Switch, Route } from 'react-router-dom'
 import GlobalStyle from './globalStyles'
@@ -21,6 +22,20 @@ const Container = styled.div`
 
 function App() {
   const [windowWidth, setWindowWidth] = useState(false)
+  const [isDisplayed, setDisplayed] = useState(false)
+  const [modalData, setModalData] = useState({
+      logo: undefined,
+      description: undefined,
+      repo1: undefined,
+      repo2: null,
+      demo: undefined,
+      liveSite: undefined
+  })
+
+  function toggleModal(data) {
+    setModalData({...modalData, ...data})
+    setDisplayed(true)
+  }
 
   window.addEventListener('resize', () => {
     if (window.innerWidth < 768) {
@@ -30,8 +45,10 @@ function App() {
     }
   })
 
+  console.log(isDisplayed)
+
   return (
-    <Container>
+    <Container id='page-container'>
     <GlobalStyle />
       <NavBar windowWidth={windowWidth}/>
         <Switch>
@@ -42,9 +59,10 @@ function App() {
               <About windowWidth={windowWidth}/>
           </Route>
           <Route exact path="/Projects">
-              <Projects windowWidth={windowWidth}/>
+              <Projects windowWidth={windowWidth} toggleModal={toggleModal}/>
           </Route>
         </Switch>
+        {isDisplayed ? <Modal modalData={modalData} /> : null}
       <Footer windowWidth={windowWidth} gmail={gmail} medium={medium} linkedin={linkedin} twitter={twitter} github={github} />
     </Container>
   );
