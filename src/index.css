@@ -24,3 +24,20 @@ p {
   width: 600px;
 }
 
+::-webkit-scrollbar {
+  background: rgba(245, 155, 0, 1);
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(245, 155, 0, 1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.3);
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.6);
+}

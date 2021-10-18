@@ -77,11 +77,12 @@ function Projects({ windowWidth, activateModal }) {
         console.log(id)
         let data;
         switch(id) {
-            case '1':
+            case '0':
                 data = {
                     logoNum: 0,
                     alt: 'FuelRight',
                     description: 'Record workouts, sleep durations, and consumed foods to gain insight into how sleep durations and foods maximize workout performance.',
+                    details: ['Implemented authentication using BCrypt gem', 'Modeled custom database schema and REST API using ActiveRecord, Postgres, and Ruby on Rails', 'Utilized components from React Bootstrap to establish a simple, elegant theme throughout the app', 'Created custom validations to protect the Postgres database'],
                     repo1: 'https://github.com/ryanhutzley/fuel-right-backend-api',
                     demo: 'https://www.loom.com/share/4d80b606effd4eb5adc119cd253dff5a',
                     liveSite: 'https://www.fuelright.app/'
@@ -89,22 +90,24 @@ function Projects({ windowWidth, activateModal }) {
                 console.log(data)
                 activateModal(data)
                 break
-            case '2':
+            case '1':
                 data = {
                     logoNum: 1,
                     alt: 'BeatMatch',
                     description: 'Matchmaking and music streaming platform for rappers and producers designed to promote musical collaboration. Profiles feature the user\'s music, playable in the app and visible to other users.',
+                    details: ['Created a self-referential model using ActiveRecord associations to establish matchmaking functionality', 'Incorporated ReactPlayer with our React frontend to allow users to play media from within the app', 'Used React Bootstrap to create elegant UI/UX and establish the Tinder-esque “swipe” behavior for liking profiles', 'Authenticated users at login by encrypting identifying account via sessions/cookies'],
                     repo1: 'https://github.com/ryanhutzley/beat-match',
                     demo: 'https://www.loom.com/share/d7c358a55fd7413199dd95b97fe92a09',
                     liveSite: 'https://www.beatmatch.us/'
                 }
                 activateModal(data)
                 break
-            case '3':
+            case '2':
                 data = {
                     logoNum: 2,
                     alt: 'Pumping Flatiron',
                     description: 'A gym membership application that recommends exercise classes based on user preferences and displays other attendees for a class.',
+                    details: ['Leveraged components from Material UI to enhance the UX of the site', 'Used ActiveRecord associations to display other attendees for a class', 'Created custom filtering algorithms to generate workout class recommendations for each user', 'Generated SQLite database with custom schema and REST API using ActiveRecord'],
                     repo1: 'https://github.com/ryanhutzley/phase-3-project-frontend',
                     repo2: 'https://github.com/ryanhutzley/sinatra-API',
                     demo: 'https://www.loom.com/share/814ab1161a7e40acaaa6d052ac5b1e1f',
@@ -116,17 +119,17 @@ function Projects({ windowWidth, activateModal }) {
 
     return (
         <CardContainer windowwidth={windowWidth ? 'true' : ''}>
-            <Card windowwidth={windowWidth ? 'true' : ''} id='1' onClick={handleClick}>
+            <Card windowwidth={windowWidth ? 'true' : ''} id='0' onClick={handleClick}>
                 <SpecialLogo src={fuelright} alt='FuelRight' />
                 <h1 className='bold underline'>FuelRight</h1>
                 <p>Record workouts, sleep durations, and consumed foods to gain insight into how sleep durations and foods affect workout performance.</p>
             </Card>
-            <Card windowwidth={windowWidth ? 'true' : ''} id='2' onClick={handleClick}>
+            <Card windowwidth={windowWidth ? 'true' : ''} id='1' onClick={handleClick}>
                 <Logo src={beatmatch} alt='beatmatch' />
                 <h1 className='bold underline'>BeatMatch</h1>
                 <p>Matchmaking and music streaming platform for rappers and producers designed to promote musical collaboration. Profiles feature the user's music, playable in the app and visible to other users.</p>
             </Card>
-            <Card windowwidth={windowWidth ? 'true' : ''} id='3' onClick={handleClick}>
+            <Card windowwidth={windowWidth ? 'true' : ''} id='2' onClick={handleClick}>
                 <Logo src={pumpingflatiron} alt='pumpingflatiron' />
                 <h1 className='bold underline'>Pumping Flatiron</h1>
                 <p>A gym membership application that recommends exercise classes based on user preferences and displays other attendees for a class.</p>

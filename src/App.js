@@ -7,7 +7,7 @@ import Modal from './Components/Modal'
 import Footer from './Components/Footer'
 import { Switch, Route } from 'react-router-dom'
 import GlobalStyle from './globalStyles'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import gmail from '../src/images/icons8-gmail-75.png'
 import medium from '../src/images/icons8-medium-monogram-75.png'
@@ -46,6 +46,7 @@ function App() {
             logoNum: undefined,
             alt: undefined,
             description: undefined,
+            details: undefined,
             repo1: undefined,
             repo2: null,
             demo: undefined,
@@ -61,6 +62,7 @@ function App() {
             logoNum: undefined,
             alt: undefined,
             description: undefined,
+            details: undefined,
             repo1: undefined,
             repo2: null,
             demo: undefined,
@@ -91,6 +93,7 @@ function App() {
       logoNum: undefined,
       alt: undefined,
       description: undefined,
+      details: undefined,
       repo1: undefined,
       repo2: null,
       demo: undefined,
@@ -136,6 +139,8 @@ function App() {
     }
   })
 
+  // console.log(windowWidth)
+
   return (
     <Container id='page-container'>
     <GlobalStyle />
@@ -151,7 +156,7 @@ function App() {
               <Projects windowWidth={windowWidth} activateModal={activateModal}/>
           </Route>
         </Switch>
-        {isDisplayed ? <Modal modalData={modalData} ref={ref} closeModal={closeModal}/> : null}
+        {isDisplayed ? <Modal modalData={modalData} ref={ref} closeModal={closeModal} windowWidth={windowWidth}/> : null}
       <Footer windowWidth={windowWidth} gmail={gmail} medium={medium} linkedin={linkedin} twitter={twitter} github={github} />
     </Container>
   );
