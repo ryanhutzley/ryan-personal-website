@@ -7,7 +7,7 @@ import pumpingflatiron from '../images/Pumping Flatiron-logos.png'
 const CardContainer = styled.div`
     margin: auto;
     margin-top: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 100px;
     display: flex;
     flex-direction: ${props => props.windowwidth ? 'column' : 'row'};
     justify-content: ${props => props.windowwidth ? '' : 'space-between'};

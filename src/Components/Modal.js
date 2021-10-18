@@ -84,9 +84,16 @@ const LinksContainer = styled.div`
     margin: auto;
     margin-top: 30px;
     display: flex;
-    justify-content: space-evenly;
     flex-wrap: wrap;
+    gap: 20px 40px;
+    justify-content: center;
 `
+
+//     flex-direction: ${props => props.windowwidth ? 'column' : 'row'};
+//     justify-content: ${props => props.windowwidth ? 'center' : 'space-evenly'};
+//     align-items: ${props => props.windowwidth ? 'center' : ''};
+//     gap: ${props => props.windowwidth ? '20px' : ''};
+//     flex-wrap: ${props => props.windowwidth ? '' : 'wrap'};
 
 const RoundButton = styled.button`
     min-width: 130px;
@@ -134,7 +141,7 @@ const Modal = React.forwardRef((props, ref) => {
     return (
         <ModalContainer>
             <ModalBackground>
-                <ModalContent ref={ref} windowwidth={props.windowwidth ? 'true' : ''}> 
+                <ModalContent ref={ref} windowwidth={props.windowWidth ? 'true' : ''}> 
                     {props.modalData.logoNum === 0 ? <ResponsiveLogoSpecial src={logos[props.modalData.logoNum]} alt={props.modalData.alt} windowwidth={props.windowWidth ? 'true' : ''}/> : <ResponsiveLogo src={logos[props.modalData.logoNum]} alt={props.modalData.alt} windowwidth={props.windowWidth ? 'true' : ''}/>}
                     <h1 className='bold underline'>{props.modalData.alt}</h1>
                     <p>{props.modalData.description}</p>
@@ -142,7 +149,7 @@ const Modal = React.forwardRef((props, ref) => {
                     {props.modalData.details ? <Detail>{props.modalData.details[1]}</Detail> : null}
                     {props.modalData.details ? <Detail>{props.modalData.details[2]}</Detail> : null}
                     {props.modalData.details ? <Detail>{props.modalData.details[3]}</Detail> : null}
-                    <LinksContainer>
+                    <LinksContainer windowwidth={props.windowWidth ? 'true' : ''}>
                         {props.modalData.repo2 ?  <a href={props.modalData.repo1}> <RoundButton>Frontend Repo</RoundButton> </a> : <a href={props.modalData.repo1}> <RoundButton>Github Repo</RoundButton> </a>}
                         {props.modalData.repo2 ? <a href={props.modalData.repo2}> <RoundButton>Backend Repo</RoundButton> </a> : null}
                         <a href={props.modalData.demo}> <RoundButton>Video Demo</RoundButton> </a>
