@@ -3,7 +3,6 @@ import song from '../audio/ryanhutzley_song.mp3'
 import 'react-h5-audio-player/lib/styles.css'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from 'react-responsive-carousel';
-
 import AudioPlayer from 'react-h5-audio-player'
 import rowingPhoto from '../images/63A0BA5F-F0BF-4B89-84D5-734A74DFE67B.JPG'
 import p1 from '../images/Gallery/IMG_2005.jpg'
@@ -22,9 +21,8 @@ import p13 from '../images/Gallery/PXL_20201107_184105277.jpg'
 
 
 const AboutWrapper = styled.div`
+    flex-grow: 1;
     margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     width: ${props => props.windowwidth ? '90%' : '75%'};

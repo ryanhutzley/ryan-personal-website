@@ -8,7 +8,7 @@ const StyledNavBar = styled.div`
     top: 0;
     margin-top: ${props => props.windowwidth ? '10px' : '20px'};
     margin-left: ${props => props.windowwidth ? '10px' : '20px'};
-    
+    margin-bottom: 50px;
     display: flex;
     justify-content: flex-start;
     align-items: center;

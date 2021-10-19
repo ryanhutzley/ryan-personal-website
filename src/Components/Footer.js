@@ -7,6 +7,7 @@ const Bottom = styled.div`
     width: 95vw;
     margin-right: auto;
     margin-left: auto;
+    margin-top: 60px;
     display: flex;
     align-items: center;
 `

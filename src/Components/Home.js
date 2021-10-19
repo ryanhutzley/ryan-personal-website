@@ -12,14 +12,16 @@ import git from '../images/icons8-git-100.png'
 import vscode from '../images/icons8-visual-studio-logo-100.png' 
 
 const HomeWrapper = styled.div`
-    margin-top: ${props => props.windowwidth ? '40px' : '30px'};
-    margin-bottom: 80px;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     gap: ${props => props.windowwidth ? '20px' : '80px'};
     justify-content: center;
     align-items: center;
 `
+
+// margin-top: ${props => props.windowwidth ? '40px' : '30px'};
+// margin-bottom: 80px;
 
 const ContentWrapper = styled.div`
     position: relative;

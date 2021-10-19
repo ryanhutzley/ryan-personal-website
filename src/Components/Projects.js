@@ -5,24 +5,23 @@ import pumpingflatiron from '../images/Pumping Flatiron-logos.png'
 
 
 const CardContainer = styled.div`
+    flex-grow: 1;
     margin: auto;
-    margin-top: 30px;
-    margin-bottom: 100px;
     display: flex;
-    flex-direction: ${props => props.windowwidth ? 'column' : 'row'};
-    justify-content: ${props => props.windowwidth ? '' : 'space-between'};
-    flex-wrap: ${props => props.windowwidth ? '' : 'wrap'};
+    justify-content: ${props => props.windowwidth ? '' : 'space-around'};
+    align-items: center;
+    flex-wrap: wrap;
     gap: ${props => props.windowwidth ? '40px' : ''};
     width: ${props => props.windowwidth ? '90%' : '80%'};
 `
 
 const Card = styled.div`
     width: ${props => props.windowwidth ? '200ox' : '300px'};
-    height: auto;
+    height: 600px;
     padding: 20px;
     border: 5px solid black;
     border-radius: 20px;
-    display: block;
+    display: inline-block;
     text-align: center;
     cursor: pointer;
     box-shadow:  20px 20px 60px #d08400,
